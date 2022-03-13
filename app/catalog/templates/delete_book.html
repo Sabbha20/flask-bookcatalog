@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+        <div class="container form table-bordered">
+        <h4 class="form">Book: {{book.title}} </h4>
+        <h4 class="form">Author: {{book.author}} </h4>
+<br><br>
+   <form class="form" action="{{url_for('main.delete_book', book_id=book_id)}}" method="post">
+       <button type="submit" class="btn btn-danger ">Delete</button>
+   </form>
+        </div>
+
+{% endblock content %}

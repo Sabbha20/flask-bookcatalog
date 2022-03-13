@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+        <div class="container form table-bordered">
+        <h4 class="form">Register Here</h4>
+<br><br>
+    <!-- <form action="" method="post" > -->
+        {{form.hidden_tag()}}
+        {{wtf.quick_form(form)}}
+        <!-- <div class="form-group">
+            {{form.name.label}}
+            <br>
+            {{form.name}}
+        </div>
+        <div class="form-group">
+            {{form.email.label}}
+            <br>
+            {{form.email}}
+        </div>
+        {{form.submit(class='btn btn-secondary')}} -->
+       
+    <!-- </form> -->
+
+    </div>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div class="container books">
+        <div class="row">
+        {% for book in books %}
+            <div class="col-md-4">
+                <img src="{{ url_for( 'static', filename='img/'+book.image   )  }}" alt="book-img" height="200" width="190" class="img-rounded">
+                <h4> Title: {{ book.title }} </h4>
+                <p> Authors: {{ book.author }} </p>
+                <p> Format: {{ book.book_format }} </p>
+                <p> Average Rating: {{ book.avg_rating }} </p>
+                <p> Pages: {{ book.num_pages }} </p>
+                <p>Publisher: <a href="{{ url_for('main.publisher_display', publisher_id=book.pub_id) }}">{{pub[book.pub_id-1]}}
+                </a></p>
+                <br>
+                <span class="btn rounded-pill btn-danger"><a href="{{url_for('main.delete_book', book_id=book.id)}}" style="text-decoration: none; color: #fff; " >Delete</a></span>
+                <span class="btn rounded-pill btn-info"><a href="{{url_for('main.edit_book', book_id=book.id)}}" style="text-decoration: none; color: #fff; " >Edit</a></span>
+                <span class="btn rounded-pill btn-success"><a href="{{url_for('main.create_book', pub_id=book.pub_id)}}" style="text-decoration: none; color: #fff; " >Create</a></span>
+                
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
