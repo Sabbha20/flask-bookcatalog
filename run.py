@@ -8,6 +8,6 @@ with flask_app.app_context():
     try:
         if not User.query.filter_by(user_name='harry').first():
             User.create_user(user='harry', email='hp@hogwarts.com', password='thechambersofsecret')
-    except [exc.NoSuchModuleError]:
+    except exc.NoSuchModuleError:
         flask_app.run()
 
